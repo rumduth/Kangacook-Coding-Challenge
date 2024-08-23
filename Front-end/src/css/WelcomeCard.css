@@ -1,0 +1,59 @@
+.welcome-card-container {
+  width: 100%;
+  max-width: 400px;
+  height: 250px;
+  perspective: 1000px;
+  margin: 20px auto;
+}
+
+.welcome-card {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  cursor: pointer;
+}
+
+.welcome-card.flipped {
+  transform: rotateY(180deg);
+}
+
+.welcome-card-front,
+.welcome-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-sizing: border-box;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.welcome-card-front {
+  background-color: #3498db;
+  color: white;
+}
+
+.welcome-card-back {
+  background-color: #f3f4f6;
+  color: #333;
+  transform: rotateY(180deg);
+  overflow-y: auto;
+}
+
+.welcome-card-front h3 {
+  margin: 0 0 10px 0;
+  font-size: 1.5em;
+}
+
+.welcome-card-front p,
+.welcome-card-back p {
+  margin: 0;
+  text-align: center;
+}

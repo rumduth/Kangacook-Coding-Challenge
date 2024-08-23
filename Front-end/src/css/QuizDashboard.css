@@ -1,0 +1,97 @@
+.quiz-completed {
+  text-align: center;
+  padding: 20px;
+}
+
+.quiz-completed h2 {
+  font-size: 2em;
+  color: #4caf50;
+  margin-bottom: 10px;
+}
+
+.fireworks {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  z-index: -1;
+}
+
+.firework {
+  position: absolute;
+}
+
+.firework::before,
+.firework::after {
+  content: "";
+  position: absolute;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  box-shadow: 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff, 0 0 #fff,
+    0 0 #fff, 0 0 #fff, 0 0 #fff;
+  animation: 1s bang ease-out infinite backwards,
+    1s gravity ease-in infinite backwards, 5s position linear infinite backwards;
+}
+
+.firework::after {
+  animation-delay: 1.25s, 1.25s, 1.25s;
+  animation-duration: 1.25s, 1.25s, 6.25s;
+}
+
+@keyframes bang {
+  to {
+    box-shadow: -70px -115.67px #00ff73, -28px -99.67px #a6ff00,
+      -58px -31.67px #002bff, -31px -46.67px #ff009d, -58px -31.67px #ff0000,
+      -51px -184.67px #00ffd5, 16px -83.67px #00ff2b, 44px -62.67px #99ff00,
+      2px -39.67px #ff008c, -36px -183.67px #5eff00, -72px -17.67px #0051ff,
+      30px -194.67px #00ffcc, -46px -182.67px #00ff33, -50px -37.67px #0d00ff,
+      0px -185.67px #ff0022, -7px -1.67px #00ff15, 6px -35.67px #002fff,
+      -95px -52.67px #ff006e, -88px -141.67px #fbff00, -20px -104.67px #00d5ff,
+      8px -22.67px #26ff00, 8px 38.33px #004dff, 19px -18.67px #ff0000,
+      19px 17.33px #00ff95, -63px -183.67px #e6ff00, -68px 31.33px #0400ff;
+  }
+}
+
+@keyframes gravity {
+  to {
+    transform: translateY(200px);
+    opacity: 0;
+  }
+}
+
+@keyframes position {
+  0%,
+  19.9% {
+    margin-top: 10%;
+    margin-left: 40%;
+  }
+  20%,
+  39.9% {
+    margin-top: 40%;
+    margin-left: 30%;
+  }
+  40%,
+  59.9% {
+    margin-top: 20%;
+    margin-left: 70%;
+  }
+  60%,
+  79.9% {
+    margin-top: 30%;
+    margin-left: 20%;
+  }
+  80%,
+  99.9% {
+    margin-top: 30%;
+    margin-left: 80%;
+  }
+}
